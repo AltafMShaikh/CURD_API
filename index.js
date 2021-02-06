@@ -1,14 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-//const winston = require('winston');
+const winston = require('winston');
 const app = express();
-//require("dotenv").config();
-//const booksRoute = require('./routes/books');
+require("dotenv").config();
+const booksRoute = require('./routes/books');
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 3000;
 
 //middlewares
-/*app.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 
@@ -41,8 +41,8 @@ mongoose
   .catch((error) => {
     logger.error(error.message);
   });
-*/
+
 //start the server
 app.listen(PORT, () => {
-  console.log(`Server started at PORT ${PORT}`);
+  logger.info(`Server started at PORT ${PORT}`);
 });
